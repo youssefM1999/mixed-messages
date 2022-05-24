@@ -16,3 +16,23 @@ function sentence_maker() {
     return sentence;
 }
 
+function answer_to_your_question() {
+    const question = prompt('I will give you an answer to a question you have instead. Ask me.');
+    console.log(`${prompt}: ${random_words(answer_user_question)}.`);
+}
+
+function in_or_out() {
+    let decision = prompt('Do you want a random fact?');
+    let looper = false;
+    while(!looper) {
+        if(decision === 'Y' || decision === 'Yes') {
+            console.log(sentence_maker());
+            looper = true;
+        }else if(decision === 'N' || decision === 'No') {
+            answer_to_your_question();
+            looper = true;
+        }else {
+            decision = prompt('I cannot understand what you said. Answer my question again.');
+        }
+    }
+}
